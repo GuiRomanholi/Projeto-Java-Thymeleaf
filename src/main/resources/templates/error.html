@@ -12,17 +12,25 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 flex justify-center items-center h-screen">
+<body class="bg-gray-200 flex justify-center items-center min-h-screen py-8 px-4">
 
-<div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+<div class="bg-white p-8 rounded-lg shadow-xl max-w-lg w-full">
 
-    <h1 class="text-2xl font-bold mb-6 text-center">Ocorreu um erro</h1>
+    <h1 class="text-3xl font-semibold mb-6 text-center text-red-600">Ocorreu um erro!</h1>
 
-        <p class="bg-red-100 font-bold" th:text="${mensagem}"></p>
-        <a th:href="@{/}">Voltar para a página inicial</a>
+    <div class="flex justify-center mb-4">
+        <svg class="h-16 w-16 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"></path>
+        </svg>
+    </div>
+
+    <p class="bg-red-100 text-red-700 p-3 rounded-lg text-center font-semibold mb-6" th:text="${mensagem}">Mensagem de erro aqui.</p>
+
+    <div class="flex justify-center">
+        <a href="/" class="text-blue-500 hover:text-blue-700 font-medium text-lg">Voltar para a página inicial</a>
+    </div>
 
 </div>
-<br>
 
 </body>
 </html>

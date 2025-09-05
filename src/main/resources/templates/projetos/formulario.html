@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Projeto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+<div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+    <h2 class="text-2xl font-bold mb-6 text-center">Cadastro de Projeto</h2>
+    <form th:action="@{/projetos/salvar}" method="post" th:object="${projeto}">
+        <input type="hidden" th:field="*{id}">
+        <div>
+            <label for="nome" class="block text-gray-700 font-medium">Nome</label>
+            <input th:field="*{nome}" type="text" id="nome" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Nome do Projeto">
+        </div>
+        <div class="mt-4">
+            <label for="responsavel" class="block text-gray-700 font-medium">Responsável</label>
+            <input th:field="*{responsavel}" type="text" id="responsavel" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Nome do Responsável">
+        </div>
+        <button type="submit" class="mt-6 w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700">Salvar</button>
+    </form>
+</div>
+</body>
+</html>
